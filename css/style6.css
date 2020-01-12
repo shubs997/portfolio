@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
+
 html{
   scroll-behavior: smooth;
 }
@@ -7,10 +9,9 @@ body {
   background-color: #34495e !important;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  
+  font-family: 'Montserrat', sans-serif;
 }
 h3{
-      font-family: "Lato", sans-serif;
     font-size: 24px;
     line-height: 40px;
     color: #ecf0f1;
@@ -29,7 +30,6 @@ h3{
   letter-spacing: 1px;
   font-size: 16px;
   color: #fff;
-  font-family: roboto;
 }
 .text {
   border: 2px solid #fff;
@@ -109,7 +109,6 @@ h3{
   width: 100%;
 }
 #banner h3{
-    font-family: "Lato", sans-serif;
     font-size: 24px;
     line-height: 40px;
     color: #ecf0f1;
@@ -123,7 +122,6 @@ h3{
 
 }
 #banner h2{
-    font-family: "Lato", sans-serif;
     font-size: 32px;
     line-height: 40px;
     color: #ecf0f1;
@@ -196,7 +194,6 @@ h3{
 }
 */
 .flex-container p{
-    font-family: "Roboto";
     font-size: 1.5em; 
     letter-spacing: 1px;
     margin: 0px;
@@ -223,7 +220,6 @@ h3{
 .nav li a{
     text-decoration: none;
     color: white;
-    font-family: "Lato", sans-serif;
     padding: 10px;
 }
 
@@ -433,7 +429,6 @@ a {
           transform: translate(-50%, -50%);
   height: 160px;
   overflow: hidden;
-  font-family: "Lato", sans-serif;
   font-size: 35px;
   line-height: 40px;
   color: #ecf0f1;
