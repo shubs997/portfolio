@@ -631,11 +631,15 @@ a {
 
   .nav li {
     border-left: 4px solid crimson;
+<<<<<<< HEAD
   }
 
   .gallery {
     flex-wrap: wrap;
   }
+=======
+}
+>>>>>>> 8cb42ceed67e046b85a50f83072bde21ba85f238
 
 
 }
