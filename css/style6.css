@@ -22,6 +22,8 @@ h3{
     text-transform: uppercase;
     letter-spacing: 10px;
 }
+
+
 .container {
   position: relative;
 }
@@ -107,20 +109,32 @@ h3{
 #banner{
   margin: 0px;
   width: 100%;
+  height: 100vh;
 }
 #banner h3{
     font-size: 24px;
     line-height: 40px;
     color: #ecf0f1;
     letter-spacing: 3px;
-    margin: 120px 0px 0px 0px;text
+    margin: 120px 0px 0px 0px;
     text-align: center;
     text-underline-position: below;
 }
+
+#aboutme {
+  max-width: 100vw;
+  margin:2vw;
+  text-align: center;
+}
+
 #aboutme h3{
   margin: 20px;
-
 }
+
+#aboutme p {
+  font-size: 1.3em;
+}
+
 #banner h2{
     font-size: 32px;
     line-height: 40px;
@@ -130,8 +144,9 @@ h3{
     text-underline-position: below;
 
 }
-#aboutme{
 
+#arrow-box {
+  padding: 20px;
 }
 
 .footer-social {
@@ -206,7 +221,7 @@ h3{
 .nav ul{
     text-decoration: none;
     text-align: center;
-    overflow: hidden;   
+ 
 }
 .nav li{
     display: inline;
@@ -230,7 +245,7 @@ h3{
   flex-wrap: wrap;
   /* Compensate for excess margin on outer gallery flex items */
   padding-right: 15px;
-  margin-top: 3%;
+  margin: 3%;
 }
 .gallery-item2 {
   /* Minimum width of 24rem and grow to fit available space */
@@ -265,13 +280,19 @@ h3{
 .gallery-image {
   display: block;
   width: 100%;
-  height: 260px;
+  height: 100%;
   object-fit: cover;
   transition: transform 400ms ease-out;
 }
 
 .gallery-image:hover {
   transform: scale(1.15);
+}
+
+.resume {
+  display: block;
+  margin: auto;
+  
 }
 .about-logo{
   display: flex;
@@ -290,8 +311,9 @@ h3{
 }
 
 #res-btn {
-  margin: 0 auto;
-  display: block;
+  margin: 0vh 40vw;
+  display: flex;
+  justify-content: center;
   border-bottom: 2px solid crimson;
   text-align: center;
   text-transform: uppercase; 
