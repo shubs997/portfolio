@@ -309,7 +309,7 @@ h4:hover {
   overflow: hidden;
   width: 80%;
   height: 80%;
-  margin: 20px 0;
+  margin: 20px;
 }
 .g-img img{
   display: flex;
@@ -682,5 +682,8 @@ a {
     font-size: 1em !important;
     margin: 0;
   }
+  .gallery-item {
+  margin: 20px 0;
+}
 
 }
