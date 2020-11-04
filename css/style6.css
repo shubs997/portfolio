@@ -329,7 +329,7 @@ h4:hover {
 }
 
 .gallery-image:hover {
-  transform: scale(1.15);
+  transform: scale(1);
 }
 
 .resume {
@@ -677,13 +677,85 @@ a {
 
 /* --------------  MEDIA QUERIES  ----------------- */
 @media only screen and (max-width: 600px) {
-
+  body {
+    overflow-x: hidden;
+    margin: 0px
+  }
   #aboutmeheading {
     font-size: 1em !important;
     margin: 0;
   }
   .gallery-item {
   margin: 20px 0;
+  }
+  #arrow-box {
+    display: none;
+  }
+  #phoneno {
+    display: block;
+  }
+  #banner h2 {
+    /* margin-left: 1.0em; */
+    padding: 0 2em;
+  }
+  #banner h3 {
+    margin: 90px 0px 0px 0px;
+  }
+  #aboutme h4 {
+    font-size: 2.5em;
+    letter-spacing: 5px;
+  }
+  #contact h4 {
+    font-size: 2.2em;
+    letter-spacing: 5px;
+  }
+  #works h4 {
+    font-size: 2.2em;
+    letter-spacing: 5px;
+    margin: 60px 0px 25px 0px;
+  }
+
+  #works h4:hover {
+    letter-spacing: 10px;
+  }
+  #aboutme p {
+    font-size: 1em;
+  }
+
+
+  .gallery-image {
+    width: 90vw;
+  }
+  .overlay {
+    width: 90vw;
+  }
+  #aboutme .gallery {
+    margin: 10% 3% 3% -4%;
+  }
+  #res-btn {
+    border: 1px solid red;
+    margin: 0vh 28vw;
+  }
+  .hvr-bounce-to-top {
+    display: none;
+  } 
+  .nav ul {
+    margin-left: -2em;
+  }
+  .nav li {
+    border-left: 3px solid crimson;
+  }
+  .gallery {
+    margin: 0 3% 0 5%;
+  }
+  
+
+
 }
 
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  .gallery-item {
+    flex: 1;
+}
 }
