@@ -1,19 +1,87 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="https://raw.githubusercontent.com/shubs997/portfolio/master/logo.png" type="image/png">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<style>
+  body {
+    background-image: radial-gradient(circle, #0F3B69 0%, #0F121A 100%);
+  }
+
+#demo {
+  text-align: center;
+  font-size: 60px;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 0px;
+  color: #fff;
+  display: block;
+  margin: 6vw 10vw 4vw 10vw;
+}
+#padd {
+  display: block;
+  margin: 3em 1em 3em 39vw;
+}
+#result {
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 0px;
+  color: #fff;
+  display: block;
+  margin: 0px 10px;
+}
+#myButton {
+  padding: 0.1em 0.5em;
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  font-size: 2em;
+  color: #fff;
+}
+#myButton:active {
+  background-color: #fff;
+  color: #000;
+}
+#result, #increment { display:inline }
+
+#quote {
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+
+</style>
 </head>
 <body>
 
-<h2>The XMLHttpRequest Object</h2>
-
-<button type="button" onclick="loadDoc()">Request data</button>
-
 <p id="demo"></p>
 
+<div id="padd">
+  <button id="myButton" onclick="clickCounter2()" type="button">-</button>
+  <p id="result"> </p>
+  <button id="myButton" onclick="clickCounter()" type="button">+</button>
+</div>
+
+<p id="quote"></p>
+
+
+
+
+
+
+
+
+
 <script>
-function loadDoc() {
-$.ajax({
+
+window.onload = function() {
+  document.getElementById("result").innerHTML = "Day : "+localStorage.clickcount;
+
+      $.ajax({
             url:"https://shubhamj.netlify.app/css/quotes.json",
             method:"GET",
             contentType: false,
@@ -24,20 +92,72 @@ $.ajax({
             processData: false,  
             success:function(data)
             {
-		var rand = Math.floor(Math.random() * 1001);
-            	console.log(rand);
-            	document.getElementById("demo").innerHTML = data[rand].text;
-            	console.log(data[rand].text);
-            	console.log(data);
-            	
+              var rand = Math.floor(Math.random() * 1001);
+              console.log(rand);
+              document.getElementById("quote").innerHTML = "'"+data[rand].text+"'";
+              console.log(data[rand].text);
+              console.log(data);
+              
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) { 
                 alert("Error: Server is down cannot process the file :("); 
             }
-           });
+      });
       
+};
 
+document.getElementById("result").innerHTML = "1";
+function clickCounter() {
+  if(typeof(Storage) !== "undefined") {
+    if (localStorage.clickcount) {
+      localStorage.clickcount = Number(localStorage.clickcount)+1;
+    } else {
+      localStorage.clickcount = 1;
+    }
+    document.getElementById("result").innerHTML = "Day : "+localStorage.clickcount;
+  } 
 }
+
+function clickCounter2() {
+  if(typeof(Storage) !== "undefined") {
+    if (localStorage.clickcount) {
+      localStorage.clickcount = Number(localStorage.clickcount)-1;
+    } else {
+      localStorage.clickcount = 1;
+    }
+  document.getElementById("result").innerHTML = "Day : "+localStorage.clickcount;
+  } 
+}
+
+
+
+// Set the date we're counting down to
+var countDownDate = new Date("Nov 10, 2020 13:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance =  now - countDownDate;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML ="It has been<br> <hr>"+ days + " days : " + hours + " hours<br><hr> since Nov 10, 2020";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
 </script>
 
 </body>
