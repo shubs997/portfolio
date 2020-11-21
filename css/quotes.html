@@ -24,8 +24,10 @@ $.ajax({
             processData: false,  
             success:function(data)
             {
-            	document.getElementById("demo").innerHTML = data[0].text;
-            	console.log(data[0].text);
+		var rand = Math.floor(Math.random() * 1001);
+            	console.log(rand);
+            	document.getElementById("demo").innerHTML = data[rand].text;
+            	console.log(data[rand].text);
             	console.log(data);
             	
             },
