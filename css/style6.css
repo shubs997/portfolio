@@ -744,7 +744,7 @@ a {
 @media only screen and (max-width: 600px) {
     body {
         overflow-x: hidden;
-        margin: 0px
+        margin: 0px;
     }
     .flex-container p {
         text-align: justify;
@@ -752,7 +752,8 @@ a {
     }
     #aboutmeheading {
         font-size: 1em !important;
-        margin: 0;
+        margin: 1.5em;
+        text-align: left;
     }
     .gallery-item {
         margin: 20px 0;
